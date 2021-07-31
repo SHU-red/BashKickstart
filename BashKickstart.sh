@@ -6,18 +6,12 @@ C_NOC='\033[0m'
 C_RED='\033[0;31m'
 C_ORG='\033[0;33m'
 
-# Get Script folder
-DIR=$1
-
 # Header
 echo "●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬๑۩۩๑▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●"
 echo -e "             ${C_ORG}Bash  Kickstart${C_NOC}"
 echo "●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●"
 echo ""
-printf "${C_ORG}$DIR\n"
-
-# Change to Script folder
-cd "$DIR"
+printf "${C_ORG}$1\n"
 
 # Initialize Folder-Level
 lev=1
@@ -74,25 +68,31 @@ list_exe () {
     for f in $1.sh
     do
 
-        # Print level spacing
-        tabs $lev
+        # If f is file
+        if [ -f $f ] ;
+        then
 
-        # Increase executable number
-        num=$((num+1))
+            # Print level spacing
+            tabs $lev
 
-        # Show executable
-        printf "\t${C_RED}└─\e[4m%03d\e[24m ${f##*/}\n" $num
+            # Increase executable number
+            num=$((num+1))
 
-        # Add to list of executables
-        exec+=("$f")
+            # Show executable
+            printf "\t${C_RED}└─\e[4m%03d\e[24m ${f##*/}\n" $num
+
+            # Add to list of executables
+            exec+=("$f")
+
+        fi
 
     done
 
 }
 
 # Execute folder listing
-list_exe "*"
-list_dir "*"
+list_exe "$1/*"
+list_dir "$1/*"
 
 # Return to no color and new Line
 printf "\n${C_NOC}●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●\n\n"
