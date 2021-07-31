@@ -11,7 +11,7 @@ DIR=$1
 
 # Header
 echo "●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬๑۩۩๑▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●"
-echo -e "             ${C_ORG}Bash Kickstart${C_NOC}"
+echo -e "             ${C_ORG}Bash  Kickstart${C_NOC}"
 echo "●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●"
 echo ""
 printf "${C_ORG}$DIR\n"
