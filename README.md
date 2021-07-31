@@ -14,3 +14,5 @@ For example:
 konsole -e bash /home/user/Scripts/BashKickstart/BashKickstart.sh /home/user/Scripts
 ```
 The script itself can be placed anywhere and the recursive search-path for *.sh-files is specified via 1st argument (as you see in the example above)
+
+![Alt text](/README/example.gif)
