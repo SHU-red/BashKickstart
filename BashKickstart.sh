@@ -1,5 +1,4 @@
 #!/bin/bash
-# BashExecutor
 
 # Declare colors
 C_NOC='\033[0m'
