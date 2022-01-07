@@ -5,6 +5,9 @@ C_NOC='\033[0m'
 C_RED='\033[0;31m'
 C_ORG='\033[0;33m'
 
+# Set maximum directory depth
+dep=2
+
 # Header
 echo "●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬๑۩۩๑▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●"
 echo -e "             ${C_ORG}Bash  Kickstart${C_NOC}"
@@ -49,7 +52,14 @@ list_dir () {
             # Loop through subdirectory
             f_tmp=$f
             list_exe "$f_tmp/*"
-            list_dir "$f_tmp/*"
+            
+            # List directorys only until defined level
+            if [ $lev -lt $dep ] ;
+            then
+
+                list_dir "$f_tmp/*"
+
+            fi
 
             # Decrease level
             lev=$((lev-stp))
