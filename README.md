@@ -1,4 +1,4 @@
-# BashKickstart
+# :runner: BashKickstart
 Bash script, giving quick access to list and execute all .sh-files of one folder and all subfolders.
 
 Especially when you have a collection of frequently used bash-scripts in one folder (and subfolders) this can be helpful.
